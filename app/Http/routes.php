@@ -59,3 +59,8 @@ Route::group(['middleware' => ['web']], function () {
     });
 });
 
+Route::get('testform',function(){
+    return view('testform');
+});
+
+Route::post('','TestForm@index');
