@@ -43,3 +43,21 @@
         </div>
     </body>
 </html>
+{{ Form::open(array('action' => 'TestForm@index')) }}
+{{ Form::label('label', 'E-Mail Address')}}
+{{ Form::text('email','')}}
+{{ Form::submit('Submit')}}
+{{ Form::close() }}
+
+<?php if($email!=""){ ?>
+<h1><?php echo $email ?></h1>
+<?php }else{ ?>
+<h1>Value undefined</h1>
+<?php }?>
+<br><br>
+
+
+@if ( $email != "" )
+    {{$email}}
+@else
+    Value not provided

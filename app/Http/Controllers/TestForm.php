@@ -10,12 +10,15 @@ namespace app\Http\Controllers;
 
 
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 
 class TestForm extends Controller
 {
 
-    public function index()
+    public function index(Request $request)
     {
-        return view('index');
+        $mail=$request->email;
+        return view('welcome', ['email'=>$mail]);
+        //return view('users', ['users' => $users]);
     }
 }
